@@ -35,6 +35,8 @@ var store1 = {
             var liEl = document.createElement('li');
             liEl.textContent = `${this.hours[i]} : ${resultArray[i]} cookies`;
             ulEl.appendChild(liEl);
+            var preEl =document.createElement('pre');
+            ulEl.appendChild(preEl);
         }
         liEl.textContent = `Total : ${total} cookies`;
     }
@@ -119,7 +121,7 @@ var store3 = {
     //start render-----//
     render: function () {
 
-        var container = document.getElementById('demo3');
+        var container = document.getElementById('demo');
         var articleEl = document.createElement('article');
         container.appendChild(articleEl);
         var h2El = document.createElement('h2');
@@ -169,7 +171,7 @@ var store4 = {
     //start render-----//
     render: function () {
 
-        var container = document.getElementById('demo3');
+        var container = document.getElementById('demo');
         var articleEl = document.createElement('article');
         container.appendChild(articleEl);
         var h2El = document.createElement('h2');
@@ -217,7 +219,7 @@ var store5 = {
     //start render-----//
     render: function () {
 
-        var container = document.getElementById('demo3');
+        var container = document.getElementById('demo');
         var articleEl = document.createElement('article');
         container.appendChild(articleEl);
         var h2El = document.createElement('h2');
