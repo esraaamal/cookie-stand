@@ -1,223 +1,91 @@
 
 
-var resultArray = [];
+
+'use strict';
 var total = 0;
-var store1 = {
-    name: "Seattle",
-    min: 23,
-    max: 65,
-    avg: 6.3,
-    hours: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
-    randomCustomer: 0,
 
-    randomFun: function (min, max) {
-        this.randomCustomer = getRandomcookies1(min, max);
-    },
-    cookiesNum: function () {
+var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
-        for (var j = 0; j < this.hours.length; j++) {
-            resultArray.push(getRandomcookies1(this.min, this.max));
-            total += resultArray[j];
-            console.log(resultArray[j]);
-        }
-        console.log(total);
-    },
-    render: function () {
-        var container = document.getElementById('demo');
-        var articleEl = document.createElement('article');
-        container.appendChild(articleEl);
-        var h2El = document.createElement('h2');
-        articleEl.appendChild(h2El);
-        h2El.textContent = store1.name;
-        var ulEl = document.createElement('ul');
-        articleEl.appendChild(ulEl);
-        for (var i = 0; i <= store1.hours.length; i++) {
-            var liEl = document.createElement('li');
-            liEl.textContent = `${this.hours[i]} : ${resultArray[i]} cookies`;
-            ulEl.appendChild(liEl);
+function Store(name, min, max, avg) {
+    //var store = {}
+    this.name = name;
+    this.min = min;
+    this.max = max;
+    this.avg = avg;
+    this.resultArray = [];
 
-        }
-        liEl.textContent = `Total : ${total} cookies`;
-        var brEl = document.createElement('br');
-        ulEl.appendChild(brEl);
+    //return store(return the random number of cookies)
+}
+
+
+Store.prototype.cookiesNum = function () {
+    for (var j = 0; j <= hours.length; j++) {
+        this.resultArray.push(getRandomcookies(this.min, this.max));
+        total += this.resultArray[j];
     }
+    console.log(this.resultArray);
 };
 
 
-function getRandomcookies1(min, max) {
-    min = Math.ceil(min * store1.avg);
-    max = Math.floor(max * store1.avg);
-    return Math.floor(Math.random() * (max - min)) + min;
-}
 
+
+
+  
+
+Store.prototype.render = function () {
+    var container = document.getElementById('demo');
+    var articleEl = document.createElement('article');
+    container.appendChild(articleEl);
+    var h2El = document.createElement('h2');
+    articleEl.appendChild(h2El);
+    h2El.textContent = this.name;
+    var ulEl = document.createElement('ul');
+    articleEl.appendChild(ulEl);
+    for (var i = 0; i <= hours.length; i++) {
+        var liEl = document.createElement('li');
+        ulEl.appendChild(liEl);
+    liEl.textContent = `${hours[i]} : ${this.resultArray[i]} cookies`;
+    }
+    liEl.textContent = `Total : ${total} cookies`;
+    var brEl = document.createElement('br');
+    ulEl.appendChild(brEl);
+};
+
+
+
+
+var store1 = new Store('Seattle', 23, 65, 6.3);
 store1.cookiesNum();
 store1.render();
 
-
-
-//new store--------------------------------------------//
-var resultArray2 = [];//iwill store the random nuber of customer per our//
-var total2 = 0; //the final sum of the cookies
-
-var store2 = {
-    name: "tokyo",
-    min: 3,
-    max: 24,
-    avg: 1.2,
-    hours: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
-    //creata a function to count the number of cookies//
-    cookiesNum: function () {
-        for (var j = 0; j <= store2.hours.length; j++) {
-            resultArray2.push(getRandomcookies2(this.min, this.max));
-            total2 += resultArray2[j];
-        }
-        console.log(total2);
-
-    },
-    //start render-----//
-    render: function () {
-
-        var container = document.getElementById('demo');
-        var articleEl = document.createElement('article');
-        container.appendChild(articleEl);
-        var h2El = document.createElement('h2');
-        articleEl.appendChild(h2El);
-        h2El.textContent = store2.name;
-        var ulEl = document.createElement('ul');
-        articleEl.appendChild(ulEl);
-        for (var i = 0; i <= store2.hours.length; i++) {
-            var liEl = document.createElement('li');
-            liEl.textContent = `${this.hours[i]} : ${resultArray2[i]} cookies`;
-            ulEl.appendChild(liEl);
-        }
-        liEl.textContent = `Total : ${total2} cookies`;
-        var brEl =document.createElement('br');
-        ulEl.appendChild(brEl);
-    }//end render function//
-};
-
-
-
-function getRandomcookies2(min, max) {
-    min = Math.ceil(min * store2.avg);
-    max = Math.floor(max * store2.avg);
-    return Math.floor(Math.random() * (max - min)) + min;
-}
+var store2 = new Store('Tokyo', 3, 24, 1.2);
 store2.cookiesNum();
 store2.render();
 
+ var store3 = new Store('Dubai', 11, 38, 3.7);
+ store3.cookiesNum();
+ store3.render();
 
-//new store--------------------------------------------//
-var resultArray3 = [];//iwill store the random nuber of customer per our//
-var total3 = 0; //the final sum of the cookies
+ var store4 = new Store('Paris', 20, 38, 2.3);
+ store4.cookiesNum();
+ store4.render();
 
-var store3 = {
-    name: "Dubai",
-    min: 11,
-    max: 38,
-    avg: 3.7,
-    hours: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
-    //creata a function to count the number of cookies//
-    cookiesNum: function () {
-        for (var j = 0; j <= store3.hours.length; j++) {
-            resultArray3.push(getRandomcookies3(this.min, this.max));
-            total3 += resultArray3[j];
-        }
-        console.log(total3);
-
-    },
-    //start render-----//
-    render: function () {
-
-        var container = document.getElementById('demo');
-        var articleEl = document.createElement('article');
-        container.appendChild(articleEl);
-        var h2El = document.createElement('h2');
-        articleEl.appendChild(h2El);
-        h2El.textContent = store3.name;
-        var ulEl = document.createElement('ul');
-        articleEl.appendChild(ulEl);
-        for (var i = 0; i <= store3.hours.length; i++) {
-            var liEl = document.createElement('li');
-            liEl.textContent = `${this.hours[i]} : ${resultArray3[i]} cookies`;
-            ulEl.appendChild(liEl);
-        }
-        liEl.textContent = `Total : ${total3} cookies`;
-        var brEl =document.createElement('br');
-        ulEl.appendChild(brEl);
-    }//end render function//
-};
+ var store5 = new Store('Lima', 2, 16, 4.6);
+ store5.cookiesNum();
+ store5.render();
 
 
+function getRandomcookies(min, max) {
 
-
-function getRandomcookies3(min, max) {
-    min = Math.ceil(min * store3.avg);
-    max = Math.floor(max * store3.avg);
     return Math.floor(Math.random() * (max - min)) + min;
 }
-store3.cookiesNum();
-store3.render();
 
 
-//end store ----------------------//
-
+//,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
 
 
-
-
-
-//new store--------------------------------------------//
-var resultArray4 = [];//iwill store the random nuber of customer per our//
-var total4 = 0; //the final sum of the cookies
-
-var store4 = {
-    name: "Paris",
-    min: 20,
-    max: 38,
-    avg: 2.3,
-    hours: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
-    //creata a function to count the number of cookies//
-    cookiesNum: function () {
-        for (var j = 0; j <= store4.hours.length; j++) {
-            resultArray4.push(getRandomcookies4(this.min, this.max));
-            total4 += resultArray4[j];
-        }
-        console.log(total4);
-
-    },
-    //start render-----//
-    render: function () {
-
-        var container = document.getElementById('demo');
-        var articleEl = document.createElement('article');
-        container.appendChild(articleEl);
-        var h2El = document.createElement('h2');
-        articleEl.appendChild(h2El);
-        h2El.textContent = store4.name;
-        var ulEl = document.createElement('ul');
-        articleEl.appendChild(ulEl);
-        for (var i = 0; i <= store4.hours.length; i++) {
-            var liEl = document.createElement('li');
-            liEl.textContent = `${this.hours[i]} : ${resultArray4[i]} cookies`;
-            ulEl.appendChild(liEl);
-        }
-        liEl.textContent = `Total : ${total4} cookies`;
-        var brEl =document.createElement('br');
-        ulEl.appendChild(brEl);
-    }//end render function//
-};
-
-
-
-function getRandomcookies4(min, max) {
-    min = Math.ceil(min * store4.avg);
-    max = Math.floor(max * store4.avg);
-    return Math.floor(Math.random() * (max - min)) + min;
-}
-store4.cookiesNum();
-store4.render();
+///////////////////////////////////////////
 
 
 
@@ -225,57 +93,38 @@ store4.render();
 
 
 
-//kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk//
-//new store--------------------------------------------//
-var resultArray5 = [];//iwill store the random nuber of customer per our//
-var total5 = 0; //the final sum of the cookies
+var tableContainer = document.getElementById('demo');
+var tableEl = document.createElement('table');
 
-var store5 = {
-    name: "Lima",
-    min: 2,
-    max: 16,
-    avg: 4.6,
-    hours: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
-    //creata a function to count the number of cookies//
-    cookiesNum: function () {
-        for (var j = 0; j <= store5.hours.length; j++) {
-            resultArray5.push(getRandomcookies5(this.min, this.max));
-            total5 += resultArray5[j];
-        }
-        console.log(total5);
-
-    },
-    //start render-----//
-    render: function () {
-
-        var container = document.getElementById('demo');
-        var articleEl = document.createElement('article');
-        container.appendChild(articleEl);
-        var h2El = document.createElement('h2');
-        articleEl.appendChild(h2El);
-        h2El.textContent = store5.name;
-        var ulEl = document.createElement('ul');
-        articleEl.appendChild(ulEl);
-        for (var i = 0; i <= store5.hours.length; i++) {
-            var liEl = document.createElement('li');
-            liEl.textContent = `${this.hours[i]} : ${resultArray5[i]} cookies`;
-            ulEl.appendChild(liEl);
-        }
-        liEl.textContent = `Total : ${total5} cookies`;
-        var brEl =document.createElement('br');
-        ulEl.appendChild(brEl);
-    }//end render function//
-};
+tableContainer.appendChild(tableEl);
+for(var i=0;i<=hours.length ;i++){
+var trEl = document.createElement('tr');
+tableEl.appendChild(trEl);
+var th1El = document.createElement('th');
+th1El.textContent =`${hours[i]}`;}
 
 
 
-function getRandomcookies5(min, max) {
-    min = Math.ceil(min * store5.avg);
-    max = Math.floor(max * store5.avg);
-    return Math.floor(Math.random() * (max - min)) + min;
-}
-store5.cookiesNum();
-store5.render();
+trEl.appendChild(th1El);
+var th2El = document.createElement('th');
+th2El.textContent = 'good with dogs';
+trEl.appendChild(th2El);
+var th3El = document.createElement('th');
+th3El.textContent = 'good with kids';
+trEl.appendChild(th3El);
 
+//the second right tree
 
+var tr2El = document.createElement('tr');
+tableEl.appendChild(tr2El);
+var td1El = document.createElement('td');
+td1El.textContent = store1.name;
+tr2El.appendChild(td1El);
 
+var td2El = document.createElement('td');
+td2El.textContent = store1.name;
+tr2El.appendChild(td2El);
+
+var td3El = document.createElement('td');
+td3El.textContent = store1.name;
+tr2El.appendChild(td3El);
