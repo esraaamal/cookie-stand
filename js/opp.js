@@ -11,12 +11,12 @@ var store1 = {
     randomCustomer: 0,
 
     randomFun: function (min, max) {
-        this.randomCustomer = getRandomcookies(min, max);
+        this.randomCustomer = getRandomcookies1(min, max);
     },
     cookiesNum: function () {
 
         for (var j = 0; j < this.hours.length; j++) {
-            resultArray.push(getRandomcookies(this.min, this.max));
+            resultArray.push(getRandomcookies1(this.min, this.max));
             total += resultArray[j];
             console.log(resultArray[j]);
         }
@@ -41,9 +41,9 @@ var store1 = {
 };
 
 
-function getRandomcookies(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
+function getRandomcookies1(min, max) {
+    min = Math.ceil(min *store1.avg);
+    max = Math.floor(max *store1.avg);
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
@@ -65,7 +65,7 @@ var store2 = {
     //creata a function to count the number of cookies//
     cookiesNum: function () {
         for (var j = 0; j <= store2.hours.length; j++) {
-            resultArray2.push(getRandomcookies(this.min, this.max));
+            resultArray2.push(getRandomcookies2(this.min, this.max));
             total2 += resultArray2[j];
         }
         console.log(total2);
@@ -90,11 +90,16 @@ var store2 = {
         liEl.textContent = `Total : ${total2} cookies`;
     }//end render function//
 };
+
+
+
+function getRandomcookies2(min, max) {
+    min = Math.ceil(min *store2.avg);
+    max = Math.floor(max *store2.avg);
+    return Math.floor(Math.random() * (max - min)) + min;
+}
 store2.cookiesNum();
 store2.render();
-
-
-
 
 
 //new store--------------------------------------------//
@@ -110,7 +115,7 @@ var store3 = {
     //creata a function to count the number of cookies//
     cookiesNum: function () {
         for (var j = 0; j <= store3.hours.length; j++) {
-            resultArray3.push(getRandomcookies(this.min, this.max));
+            resultArray3.push(getRandomcookies3(this.min, this.max));
             total3 += resultArray3[j];
         }
         console.log(total3);
@@ -135,6 +140,15 @@ var store3 = {
         liEl.textContent = `Total : ${total3} cookies`;
     }//end render function//
 };
+
+
+
+
+function getRandomcookies3(min, max) {
+    min = Math.ceil(min *store3.avg);
+    max = Math.floor(max *store3.avg);
+    return Math.floor(Math.random() * (max - min)) + min;
+}
 store3.cookiesNum();
 store3.render();
 
@@ -160,7 +174,7 @@ var store4 = {
     //creata a function to count the number of cookies//
     cookiesNum: function () {
         for (var j = 0; j <= store4.hours.length ; j++) {
-            resultArray4.push(getRandomcookies(this.min, this.max));
+            resultArray4.push(getRandomcookies4(this.min, this.max));
             total4 += resultArray4[j];
         }
         console.log(total4);
@@ -185,6 +199,14 @@ var store4 = {
         liEl.textContent = `Total : ${total4} cookies`;
     }//end render function//
 };
+
+
+
+function getRandomcookies4(min, max) {
+    min = Math.ceil(min *store4.avg);
+    max = Math.floor(max *store4.avg);
+    return Math.floor(Math.random() * (max - min)) + min;
+}
 store4.cookiesNum();
 store4.render();
 
@@ -208,7 +230,7 @@ var store5 = {
     //creata a function to count the number of cookies//
     cookiesNum: function () {
         for (var j = 0; j <= store5.hours.length ; j++) {
-            resultArray5.push(getRandomcookies(this.min, this.max));
+            resultArray5.push(getRandomcookies5(this.min, this.max));
             total5 += resultArray5[j];
         }
         console.log(total5);
@@ -233,6 +255,14 @@ var store5 = {
         liEl.textContent = `Total : ${total5} cookies`;
     }//end render function//
 };
+
+
+
+function getRandomcookies5(min, max) {
+    min = Math.ceil(min *store5.avg);
+    max = Math.floor(max *store5.avg);
+    return Math.floor(Math.random() * (max - min)) + min;
+}
 store5.cookiesNum();
 store5.render();
 
