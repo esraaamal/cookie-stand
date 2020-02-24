@@ -35,17 +35,18 @@ var store1 = {
             var liEl = document.createElement('li');
             liEl.textContent = `${this.hours[i]} : ${resultArray[i]} cookies`;
             ulEl.appendChild(liEl);
-            var preEl =document.createElement('pre');
-            ulEl.appendChild(preEl);
+
         }
         liEl.textContent = `Total : ${total} cookies`;
+        var brEl = document.createElement('br');
+        ulEl.appendChild(brEl);
     }
 };
 
 
 function getRandomcookies1(min, max) {
-    min = Math.ceil(min *store1.avg);
-    max = Math.floor(max *store1.avg);
+    min = Math.ceil(min * store1.avg);
+    max = Math.floor(max * store1.avg);
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
@@ -90,14 +91,16 @@ var store2 = {
             ulEl.appendChild(liEl);
         }
         liEl.textContent = `Total : ${total2} cookies`;
+        var brEl =document.createElement('br');
+        ulEl.appendChild(brEl);
     }//end render function//
 };
 
 
 
 function getRandomcookies2(min, max) {
-    min = Math.ceil(min *store2.avg);
-    max = Math.floor(max *store2.avg);
+    min = Math.ceil(min * store2.avg);
+    max = Math.floor(max * store2.avg);
     return Math.floor(Math.random() * (max - min)) + min;
 }
 store2.cookiesNum();
@@ -140,6 +143,8 @@ var store3 = {
             ulEl.appendChild(liEl);
         }
         liEl.textContent = `Total : ${total3} cookies`;
+        var brEl =document.createElement('br');
+        ulEl.appendChild(brEl);
     }//end render function//
 };
 
@@ -147,8 +152,8 @@ var store3 = {
 
 
 function getRandomcookies3(min, max) {
-    min = Math.ceil(min *store3.avg);
-    max = Math.floor(max *store3.avg);
+    min = Math.ceil(min * store3.avg);
+    max = Math.floor(max * store3.avg);
     return Math.floor(Math.random() * (max - min)) + min;
 }
 store3.cookiesNum();
@@ -175,7 +180,7 @@ var store4 = {
     hours: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
     //creata a function to count the number of cookies//
     cookiesNum: function () {
-        for (var j = 0; j <= store4.hours.length ; j++) {
+        for (var j = 0; j <= store4.hours.length; j++) {
             resultArray4.push(getRandomcookies4(this.min, this.max));
             total4 += resultArray4[j];
         }
@@ -199,14 +204,16 @@ var store4 = {
             ulEl.appendChild(liEl);
         }
         liEl.textContent = `Total : ${total4} cookies`;
+        var brEl =document.createElement('br');
+        ulEl.appendChild(brEl);
     }//end render function//
 };
 
 
 
 function getRandomcookies4(min, max) {
-    min = Math.ceil(min *store4.avg);
-    max = Math.floor(max *store4.avg);
+    min = Math.ceil(min * store4.avg);
+    max = Math.floor(max * store4.avg);
     return Math.floor(Math.random() * (max - min)) + min;
 }
 store4.cookiesNum();
@@ -231,7 +238,7 @@ var store5 = {
     hours: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
     //creata a function to count the number of cookies//
     cookiesNum: function () {
-        for (var j = 0; j <= store5.hours.length ; j++) {
+        for (var j = 0; j <= store5.hours.length; j++) {
             resultArray5.push(getRandomcookies5(this.min, this.max));
             total5 += resultArray5[j];
         }
@@ -255,14 +262,16 @@ var store5 = {
             ulEl.appendChild(liEl);
         }
         liEl.textContent = `Total : ${total5} cookies`;
+        var brEl =document.createElement('br');
+        ulEl.appendChild(brEl);
     }//end render function//
 };
 
 
 
 function getRandomcookies5(min, max) {
-    min = Math.ceil(min *store5.avg);
-    max = Math.floor(max *store5.avg);
+    min = Math.ceil(min * store5.avg);
+    max = Math.floor(max * store5.avg);
     return Math.floor(Math.random() * (max - min)) + min;
 }
 store5.cookiesNum();
