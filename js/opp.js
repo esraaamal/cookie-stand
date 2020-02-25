@@ -139,7 +139,6 @@ for(var i=0 ; i< hours.length ;i++){
     }
     var tdTotalEl =document.createElement('td');
 tdTotalEl.textContent=`${store1.total} `;
-totalArr.push(store1.total);
 tr2El.appendChild(tdTotalEl);
 
     
@@ -159,7 +158,6 @@ for(var i=0 ; i< hours.length ;i++){
     //to find the total for first row----------
     var tdTotal2El =document.createElement('td');
     tdTotal2El.textContent=`${store2.total} `;
-    totalArr.push(store2.total);
     tr3El.appendChild(tdTotal2El);
     
 //third row-FOR STORE3-------------------------------------------
@@ -238,11 +236,12 @@ for(var i=0 ; i< hours.length ;i++){
     }
     //find the total of the total
 var tdTotal6El =document.createElement('td');
-for(var k=0 ;k<=totalArr.length ;k++){
+/*for(var k=0 ;k<=totalArr.length ;k++){
  endArr += totalArr[k];
  console.log(endArr);
-}
-tdTotal6El.textContent= `${endArr}`;
+}*/
+var tota12345 =store1.total +store2.total +store3.total+ store4.total +store5.total ;
+tdTotal6El.textContent= `${tota12345}`;
 tr7El.appendChild(tdTotal6El);
 
 
