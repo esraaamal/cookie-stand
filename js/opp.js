@@ -30,7 +30,7 @@ Store.prototype.cookiesNum = function () {
 
 
 
-  
+
 
 Store.prototype.render = function () {
     var container = document.getElementById('demo');
@@ -44,7 +44,7 @@ Store.prototype.render = function () {
     for (var i = 0; i <= hours.length; i++) {
         var liEl = document.createElement('li');
         ulEl.appendChild(liEl);
-    liEl.textContent = `${hours[i]} : ${this.resultArray[i]} cookies`;
+        liEl.textContent = `${hours[i]} : ${this.resultArray[i]} cookies`;
     }
     liEl.textContent = `Total : ${total} cookies`;
     var brEl = document.createElement('br');
@@ -62,20 +62,23 @@ var store2 = new Store('Tokyo', 3, 24, 1.2);
 store2.cookiesNum();
 store2.render();
 
- var store3 = new Store('Dubai', 11, 38, 3.7);
- store3.cookiesNum();
- store3.render();
+var store3 = new Store('Dubai', 11, 38, 3.7);
+store3.cookiesNum();
+store3.render();
 
- var store4 = new Store('Paris', 20, 38, 2.3);
- store4.cookiesNum();
- store4.render();
+var store4 = new Store('Paris', 20, 38, 2.3);
+store4.cookiesNum();
+store4.render();
 
- var store5 = new Store('Lima', 2, 16, 4.6);
- store5.cookiesNum();
- store5.render();
+var store5 = new Store('Lima', 2, 16, 4.6);
+store5.cookiesNum();
+store5.render();
 
 
 function getRandomcookies(min, max) {
+    //  min = Math.ceil(min * ٍavg);
+    //  max = Math.floor(max * Store.avg);
+
 
     return Math.floor(Math.random() * (max - min)) + min;
 }
@@ -88,22 +91,78 @@ function getRandomcookies(min, max) {
 ///////////////////////////////////////////
 
 
+/*function headtable(){
+    for(var i=0 ; i<=hours.length ;i++){
 
+        var tdEl =document.createElement('td');
+        tdEl.textContent= hours[i];
+        trEl.appendChild(tdEl);
+    }
+}*/
 
 
 
 
 var tableContainer = document.getElementById('demo');
 var tableEl = document.createElement('table');
+tableContainer.appendChild(tableEl);
+
+var trEl = document.createElement('tr');
+tableEl.appendChild(trEl);
+//first col
+var th1El = document.createElement('th');
+th1El.textContent = ' ';
+trEl.appendChild(th1El);
+//show all the col on hours with for loop
+for(var i=0 ; i< hours.length ;i++){
+var th2El = document.createElement('th');
+th2El.textContent = `${hours[i]}  `;
+trEl.appendChild(th2El);
+}
+
+
+var tr2El = document.createElement('tr');
+tableEl.appendChild(tr2El);
+//first row
+var td1El =document.createElement('td');
+td1El.textContent=`${store1.name} `;
+tr2El.appendChild(td1El);
+for(var i=0 ; i< hours.length ;i++){
+    var td2El = document.createElement('td');
+    td2El.textContent = `${store1.resultArray[i]}  `;
+    tr2El.appendChild(td2El);
+    }
+    
+//second row
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 
 tableContainer.appendChild(tableEl);
-for(var i=0;i<=hours.length ;i++){
 var trEl = document.createElement('tr');
 tableEl.appendChild(trEl);
 var th1El = document.createElement('th');
-th1El.textContent =`${hours[i]}`;}
-
-
+th1El.textContent =`${hours[i]}`;
 
 trEl.appendChild(th1El);
 var th2El = document.createElement('th');
@@ -127,4 +186,4 @@ tr2El.appendChild(td2El);
 
 var td3El = document.createElement('td');
 td3El.textContent = store1.name;
-tr2El.appendChild(td3El);
+tr2El.appendChild(td3El);*/
