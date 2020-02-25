@@ -120,7 +120,7 @@ th2El.textContent = `${hours[i]}  `;
 trEl.appendChild(th2El);
 }
 
-
+//first row FOR STORE1-----------------------------------------------
 var tr2El = document.createElement('tr');
 tableEl.appendChild(tr2El);
 //first row
@@ -133,10 +133,74 @@ for(var i=0 ; i< hours.length ;i++){
     tr2El.appendChild(td2El);
     }
     
-//second row
+//second row-FOR STORE2-------------------------------------------
+var tr3El = document.createElement('tr');
+tableEl.appendChild(tr3El);
+//first row
+var td2El =document.createElement('td');
+td2El.textContent=`${store2.name} `;
+tr3El.appendChild(td2El);
+for(var i=0 ; i< hours.length ;i++){
+    var td2El = document.createElement('td');
+    td2El.textContent = `${store2.resultArray[i]}  `;
+    tr3El
+.appendChild(td2El);
+    }
+
+//third row-FOR STORE3-------------------------------------------
+
+    var tr4El = document.createElement('tr');
+    tableEl.appendChild(tr4El);
+    //first row
+    var td3El =document.createElement('td');
+    td3El.textContent=`${store3.name} `;
+    tr4El.appendChild(td3El);
+    for(var i=0 ; i< hours.length ;i++){
+        var td3El = document.createElement('td');
+        td3El.textContent = `${store3.resultArray[i]}  `;
+        tr4El.appendChild(td3El);
+        }
+
+//fourth row-FOR STORE4-------------------------------------------
+var tr5El = document.createElement('tr');
+tableEl.appendChild(tr5El);
+var td4El =document.createElement('td');
+td4El.textContent=`${store4.name} `;
+tr5El.appendChild(td4El);
+for(var i=0 ; i< hours.length ;i++){
+    var td4El = document.createElement('td');
+    td4El.textContent = `${store4.resultArray[i]}  `;
+    tr5El.appendChild(td4El);
+    }
 
 
 
+// row-FOR STORE5-------------------------------------------
+
+    var tr6El = document.createElement('tr');
+tableEl.appendChild(tr6El);
+//first row
+var td5El=document.createElement('td');
+td5El.textContent=`${store5.name} `;
+tr6El.appendChild(td5El);
+for(var i=0 ; i< hours.length ;i++){
+    var td5El= document.createElement('td');
+    td5El.textContent = `${store5.resultArray[i]}  `;
+    tr6El.appendChild(td5El);
+    }
+
+//TOTAL Row===========================
+var tr7El = document.createElement('tr');
+tableEl.appendChild(tr7El);
+//first row
+var td6El=document.createElement('td');
+td6El.textContent='Total';
+tr7El.appendChild(td6El);
+for(var i=0 ; i< hours.length ;i++){
+    var td6El= document.createElement('td');
+    td6El.textContent = '';
+    tr7El.appendChild(td6El);
+    }
 
 
 
