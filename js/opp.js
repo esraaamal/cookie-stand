@@ -2,8 +2,8 @@
 
 
 'use strict';
-
-
+var endArr=0;
+var totalArr =[];
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
 function Store(name, min, max, avg) {
@@ -26,7 +26,8 @@ Store.prototype.cookiesNum = function () {
         this.resultArray.push(nubmcookies);
         this.total += this.resultArray[j];
     }
-    console.log(this.resultArray);
+    
+    //console.log(this.resultArray);
 };
 
 
@@ -114,7 +115,7 @@ tableEl.appendChild(trEl);
 var th1El = document.createElement('th');
 th1El.textContent = ' ';
 trEl.appendChild(th1El);
-//show all the col on hours with for loop
+//show all the col on hours with for loop---------------------
 for(var i=0 ; i< hours.length ;i++){
 var th2El = document.createElement('th');
 th2El.textContent = `${hours[i]}  `;
@@ -138,6 +139,7 @@ for(var i=0 ; i< hours.length ;i++){
     }
     var tdTotalEl =document.createElement('td');
 tdTotalEl.textContent=`${store1.total} `;
+totalArr.push(store1.total);
 tr2El.appendChild(tdTotalEl);
 
     
@@ -157,6 +159,7 @@ for(var i=0 ; i< hours.length ;i++){
     //to find the total for first row----------
     var tdTotal2El =document.createElement('td');
     tdTotal2El.textContent=`${store2.total} `;
+    totalArr.push(store2.total);
     tr3El.appendChild(tdTotal2El);
     
 //third row-FOR STORE3-------------------------------------------
@@ -174,6 +177,7 @@ for(var i=0 ; i< hours.length ;i++){
         }
         var tdTotal3El =document.createElement('td');
         tdTotal3El.textContent=`${store3.total} `;
+        totalArr.push(store3.total);
         tr4El.appendChild(tdTotal3El);
 
 
@@ -191,6 +195,7 @@ for(var i=0 ; i< hours.length ;i++){
 //find the total of the row
 var tdTotal4El =document.createElement('td');
     tdTotal4El.textContent=`${store4.total} `;
+    totalArr.push(store4.total);
     tr5El.appendChild(tdTotal4El);
     
 
@@ -226,12 +231,18 @@ td6El.textContent='Total';
 tr7El.appendChild(td6El);
 for(var i=0 ; i< hours.length ;i++){
     var td6El= document.createElement('td');
-    td6El.textContent = '';
+    var sumAll=0;
+    var sumAll=store1.resultArray[i]+store2.resultArray[i]+store3.resultArray[i]+store4.resultArray[i]+store5.resultArray[i]
+    td6El.textContent = `${sumAll}`;
     tr7El.appendChild(td6El);
     }
     //find the total of the total
 var tdTotal6El =document.createElement('td');
-tdTotal6El.textContent= '';
+for(var k=0 ;k<=totalArr.length ;k++){
+ endArr += totalArr[k];
+ console.log(endArr);
+}
+tdTotal6El.textContent= `${endArr}`;
 tr7El.appendChild(tdTotal6El);
 
 
