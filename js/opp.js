@@ -2,7 +2,7 @@
 
 
 'use strict';
-var total = 0;
+
 
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
@@ -13,6 +13,7 @@ function Store(name, min, max, avg) {
     this.max = max;
     this.avg = avg;
     this.resultArray = [];
+    this.total = 0;
 
     //return store(return the random number of cookies)
 }
@@ -20,8 +21,10 @@ function Store(name, min, max, avg) {
 
 Store.prototype.cookiesNum = function () {
     for (var j = 0; j <= hours.length; j++) {
-        this.resultArray.push(getRandomcookies(this.min, this.max));
-        total += this.resultArray[j];
+        var randomcook=getRandomcookies(this.min, this.max);
+        var nubmcookies = Math.floor(randomcook * this.avg);
+        this.resultArray.push(nubmcookies);
+        this.total += this.resultArray[j];
     }
     console.log(this.resultArray);
 };
@@ -46,7 +49,7 @@ Store.prototype.render = function () {
         ulEl.appendChild(liEl);
         liEl.textContent = `${hours[i]} : ${this.resultArray[i]} cookies`;
     }
-    liEl.textContent = `Total : ${total} cookies`;
+    liEl.textContent = `Total : ${this.total} cookies`;
     var brEl = document.createElement('br');
     ulEl.appendChild(brEl);
 };
@@ -76,10 +79,8 @@ store5.render();
 
 
 function getRandomcookies(min, max) {
-    //  min = Math.ceil(min * ٍavg);
-    //  max = Math.floor(max * Store.avg);
-
-
+    min = Math.ceil(min);
+    max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
@@ -119,6 +120,9 @@ var th2El = document.createElement('th');
 th2El.textContent = `${hours[i]}  `;
 trEl.appendChild(th2El);
 }
+var th3El = document.createElement('th');
+th3El.textContent = ' Total';
+trEl.appendChild(th3El);
 
 //first row FOR STORE1-----------------------------------------------
 var tr2El = document.createElement('tr');
@@ -132,11 +136,15 @@ for(var i=0 ; i< hours.length ;i++){
     td2El.textContent = `${store1.resultArray[i]}  `;
     tr2El.appendChild(td2El);
     }
+    var tdTotalEl =document.createElement('td');
+tdTotalEl.textContent=`${store1.total} `;
+tr2El.appendChild(tdTotalEl);
+
     
 //second row-FOR STORE2-------------------------------------------
 var tr3El = document.createElement('tr');
 tableEl.appendChild(tr3El);
-//first row
+
 var td2El =document.createElement('td');
 td2El.textContent=`${store2.name} `;
 tr3El.appendChild(td2El);
@@ -146,7 +154,11 @@ for(var i=0 ; i< hours.length ;i++){
     tr3El
 .appendChild(td2El);
     }
-
+    //to find the total for first row----------
+    var tdTotal2El =document.createElement('td');
+    tdTotal2El.textContent=`${store2.total} `;
+    tr3El.appendChild(tdTotal2El);
+    
 //third row-FOR STORE3-------------------------------------------
 
     var tr4El = document.createElement('tr');
@@ -160,6 +172,10 @@ for(var i=0 ; i< hours.length ;i++){
         td3El.textContent = `${store3.resultArray[i]}  `;
         tr4El.appendChild(td3El);
         }
+        var tdTotal3El =document.createElement('td');
+        tdTotal3El.textContent=`${store3.total} `;
+        tr4El.appendChild(tdTotal3El);
+
 
 //fourth row-FOR STORE4-------------------------------------------
 var tr5El = document.createElement('tr');
@@ -172,10 +188,13 @@ for(var i=0 ; i< hours.length ;i++){
     td4El.textContent = `${store4.resultArray[i]}  `;
     tr5El.appendChild(td4El);
     }
+//find the total of the row
+var tdTotal4El =document.createElement('td');
+    tdTotal4El.textContent=`${store4.total} `;
+    tr5El.appendChild(tdTotal4El);
+    
 
-
-
-// row-FOR STORE5-------------------------------------------
+//  5 ---row-FOR STORE5-------------------------------------------
 
     var tr6El = document.createElement('tr');
 tableEl.appendChild(tr6El);
@@ -189,6 +208,15 @@ for(var i=0 ; i< hours.length ;i++){
     tr6El.appendChild(td5El);
     }
 
+
+//find the total of the row
+var tdTotal5El =document.createElement('td');
+    tdTotal5El.textContent=`${store5.total} `;
+    tr6El.appendChild(tdTotal5El);
+
+
+
+
 //TOTAL Row===========================
 var tr7El = document.createElement('tr');
 tableEl.appendChild(tr7El);
@@ -201,6 +229,10 @@ for(var i=0 ; i< hours.length ;i++){
     td6El.textContent = '';
     tr7El.appendChild(td6El);
     }
+    //find the total of the total
+var tdTotal6El =document.createElement('td');
+tdTotal6El.textContent= '';
+tr7El.appendChild(tdTotal6El);
 
 
 
