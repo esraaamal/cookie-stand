@@ -221,19 +221,22 @@ var tdTotal5El =document.createElement('td');
 
 
 //TOTAL Row===========================
+var totalOfTotal =0;
 var tr7El = document.createElement('tr');
 tableEl.appendChild(tr7El);
-//first row
+//
 var td6El=document.createElement('td');
 td6El.textContent='Total';
 tr7El.appendChild(td6El);
 for(var i=0 ; i< hours.length ;i++){
     var td6El= document.createElement('td');
-    var sumAll=0;
-    var sumAll=store1.resultArray[i]+store2.resultArray[i]+store3.resultArray[i]+store4.resultArray[i]+store5.resultArray[i]
+    var sumAll=store1.resultArray[i]+store2.resultArray[i]+store3.resultArray[i]+store4.resultArray[i]+store5.resultArray[i];
+
+    totalOfTotal +=sumAll;
+
     td6El.textContent = `${sumAll}`;
     tr7El.appendChild(td6El);
-    }
+    }  console.log(totalOfTotal)
     //find the total of the total
 var tdTotal6El =document.createElement('td');
 /*for(var k=0 ;k<=totalArr.length ;k++){
@@ -241,7 +244,9 @@ var tdTotal6El =document.createElement('td');
  console.log(endArr);
 }*/
 var tota12345 =store1.total +store2.total +store3.total+ store4.total +store5.total ;
-tdTotal6El.textContent= `${tota12345}`;
+console.log(tota12345);
+var totalOfTotal2 =totalOfTotal + tota12345 ;
+tdTotal6El.textContent= `${totalOfTotal2}`;
 tr7El.appendChild(tdTotal6El);
 
 
