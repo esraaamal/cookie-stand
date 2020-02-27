@@ -275,14 +275,11 @@ for (var i = 0; i < locations.length; i++) {
     
     tdTotal6El.textContent = metaTotal ;
     trEl.appendChild(tdTotal6El);
-    }
-
-    
-    
+}
 
 renderfooter();
 
-/*var myForm = document.getElementById('myForm');
+var myForm = document.getElementById('myForm');
 
 myForm.addEventListener('submit' , function(event){
   event.preventDefault();
@@ -290,4 +287,7 @@ myForm.addEventListener('submit' , function(event){
   var storeName = event.target.name.value;
   var min= event.target.min.value;
   var max= event.target.max.value;
-  }*/
+  var avg=event.target.avg.value;
+   var enfor =new Store(storeName, min, max, avg);
+   endfor.render1();
+  });
