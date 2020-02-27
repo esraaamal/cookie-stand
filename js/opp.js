@@ -69,7 +69,7 @@ new Store('Lima', 2, 16, 4.6);
 //store5.cookiesNum();
 //store5.render();
 
-
+new Store('jordan' ,3,22,2.9);
 //to call the render:--------------
 
 
