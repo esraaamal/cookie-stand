@@ -278,8 +278,13 @@ for (var i = 0; i < locations.length; i++) {
 }
 
 renderfooter();
+///////////////////////////////delete row function
+function myFunction() {
+    document.getElementById("myTable").deleteRow(0);
+  }
+    /////////////////////////
 
-var myForm = document.getElementById('myForm');
+var MyForm = document.getElementById('myForm');
 
 myForm.addEventListener('submit' , function(event){
   event.preventDefault();
@@ -288,6 +293,8 @@ myForm.addEventListener('submit' , function(event){
   var min= event.target.min.value;
   var max= event.target.max.value;
   var avg=event.target.avg.value;
-   var enfor =new Store(storeName, min, max, avg);
-   endfor.render1();
+   var endfor =new Store(storeName, min, max, avg);
+
+
+   endfor.render();
   });
