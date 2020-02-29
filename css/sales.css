@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background:url("/img/hi.jpeg");
+    background:url("img/hi.jpeg");
     background-size: cover;
     position: relative;
     background-repeat: no-repeat;
@@ -176,7 +176,9 @@ th {
 
 
 }
-
+#demo{
+    font-family: sans-serif;
+}
 
 /*
 
