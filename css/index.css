@@ -1,0 +1,113 @@
+body{
+
+    background-color: aquamarine;
+background-image: url("https://ak8.picdn.net/shutterstock/videos/12138368/thumb/1.jpg");
+background-color: #cccccc;
+height: 500px;
+    background-position: center center;
+    
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+
+
+}
+
+.sign-in {
+    width: 300px;
+    box-shadow: 0 0 3px 0 rgb(0, 0, 0, 3);
+    background: #fff;
+    padding:20px;
+    margin: 9% auto 0;
+    text-align: center;
+    border-radius: 20px;
+}
+.sign-in h2{
+
+color: #1c8adb;
+
+}
+.input-box{
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px  0;
+    width: 90%;
+    outline: none;
+    border: 1px snow #999;
+
+}
+button{
+    color: #fff;
+border-radius: 20px;
+padding: 10px;
+max-width: 10px 0;
+width: 90%;
+outline: none;
+border: 1px solid;
+font-size: 15px;
+
+
+}
+
+
+
+.signUp-btn{
+    background-color: #1c8adb ;
+
+
+}
+.signUp-btn:hover{
+    box-shadow: 0px 0px 18px  #088ceb  ;
+}
+
+.signface-btn{
+    background-color:#21afde;
+    
+}
+.signface-btn:hover{
+    box-shadow: 0px 0px 18px rgb(9, 125, 202);
+    
+}
+
+
+ a{
+    text-decoration: none;
+    font: outline;
+    font-style: bold;
+    color: white;
+    
+}
+.sign-in p a{
+    text-decoration: underline;
+}
+
+/*unviseted-link*/
+.sign-in p a:link{
+color: rgb(58, 9, 41);
+}
+/*viseted-link*/
+.sign-in p a:visited{
+    color: rgb(54, 9, 54);
+}
+/*mouse over link*/
+.sign-in p a:hover{
+    color: rgb(204, 9, 9);
+}
+/*click the link*/
+.sign-in p a:active{
+    color: rgb(11, 116, 28);
+}
+hr{
+margin-top: 20px;
+width: 80%;
+
+}
+.or{
+    margin: -19px auto 10px;
+    width: 30px;
+    background-color: #fff;
+}
+.sign-in img{
+    width: 80px;
+    margin-top: -50px;
+}
