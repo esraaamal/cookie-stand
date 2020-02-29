@@ -1,6 +1,5 @@
 
 
-
 'use strict';
 var endArr = 0;
 var totalArr = [];
@@ -69,7 +68,7 @@ new Store('Lima', 2, 16, 4.6);
 //store5.cookiesNum();
 //store5.render();
 
-new Store('jordan' ,3,22,2.9);
+
 //to call the render:--------------
 
 
@@ -172,11 +171,9 @@ for (var i = 0; i < locations.length; i++) {
 
 
 /*
-
     //second row-FOR STORE2-------------------------------------------
     var tr3El = document.createElement('tr');
     tableEl.appendChild(tr3El);
-
     var tdEl = document.createElement('td');
     tdEl.textContent = `${store2.name} `;
     tr3El.appendChild(tdEl);
@@ -190,9 +187,7 @@ for (var i = 0; i < locations.length; i++) {
     var tdTotal2El = document.createElement('td');
     tdTotal2El.textContent = `${store2.total} `;
     tr3El.appendChild(tdTotal2El);
-
     //third row-FOR STORE3-------------------------------------------
-
     var tr4El = document.createElement('tr');
     tableEl.appendChild(tr4El);
     //first row
@@ -208,8 +203,6 @@ for (var i = 0; i < locations.length; i++) {
     tdTotal3El.textContent = `${store3.total} `;
     totalArr.push(store3.total);
     tr4El.appendChild(tdTotal3El);
-
-
     //fourth row-FOR STORE4-------------------------------------------
     var tr5El = document.createElement('tr');
     tableEl.appendChild(tr5El);
@@ -226,10 +219,7 @@ for (var i = 0; i < locations.length; i++) {
     tdTotal4El.textContent = `${store4.total} `;
     totalArr.push(store4.total);
     tr5El.appendChild(tdTotal4El);
-
-
     //  5 ---row-FOR STORE5-------------------------------------------
-
     var tr6El = document.createElement('tr');
     tableEl.appendChild(tr6El);
     //first row
@@ -241,13 +231,10 @@ for (var i = 0; i < locations.length; i++) {
         td5El.textContent = `${store5.resultArray[i]}  `;
         tr6El.appendChild(td5El);
     }
-
-
     //find the total of the row
     var tdTotal5El = document.createElement('td');
     tdTotal5El.textContent = `${store5.total} `;
     tr6El.appendChild(tdTotal5El);
-
 */
 
 
@@ -278,13 +265,8 @@ for (var i = 0; i < locations.length; i++) {
 }
 
 renderfooter();
-///////////////////////////////delete row function
-function myFunction() {
-    document.getElementById("myTable").deleteRow(0);
-  }
-    /////////////////////////
 
-var MyForm = document.getElementById('myForm');
+var myForm = document.getElementById('myForm');
 
 myForm.addEventListener('submit' , function(event){
   event.preventDefault();
@@ -293,8 +275,8 @@ myForm.addEventListener('submit' , function(event){
   var min= event.target.min.value;
   var max= event.target.max.value;
   var avg=event.target.avg.value;
-   var endfor =new Store(storeName, min, max, avg);
-
-
-   endfor.render();
+   var enfor =new Store(storeName, min, max, avg);
+   endfor.render1();
   });
+
+
