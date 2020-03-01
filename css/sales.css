@@ -8,6 +8,7 @@ body{
     position: relative;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    border: 10px solid #009578;
 }
 #demoTable{
     float: left;
@@ -21,6 +22,8 @@ body h1{
     font-family: 'Kaushan Script' ;
 font-family: 'Handlee' ;
 font-style: italic;
+margin-top: 10px;
+margin-left: 10px;
 
 }
 
