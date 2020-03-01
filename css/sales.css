@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Handlee|Kaushan+Script&display=swap');
+
 body{
     margin: 0;
     padding: 0;
@@ -15,6 +17,10 @@ body{
 body h1{
     font-weight: 900;
     font-size: 50px;
+    text-transform: initial;
+    font-family: 'Kaushan Script' ;
+font-family: 'Handlee' ;
+font-style: italic;
 
 }
 

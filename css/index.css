@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Orbitron:400,700&display=swap');body{
+@import url('https://fonts.googleapis.com/css?family=Orbitron:400,700&display=swap');
+
+body{
 
     background-color: aquamarine;
 background-image: url(/img/hi.jpeg);
@@ -38,6 +40,10 @@ overflow: scroll;
     color: white;
     font-weight: 900;
    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.mainppg{
+
+    height: 2000px;
 }
 
 .sign-in {
