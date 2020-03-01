@@ -13,13 +13,13 @@
 <div class="content1">
     <p class="content">
     <article class="paragraph">
-        <h1>content</h1>
+        <h1>Content</h1>
     
-        <strong>adress</strong> <br>
-        <em> casllemaine street </em><br>
-        <em> milton QLD 4064 </em><br>
+        <strong>Adress :</strong> <br>
+        <em> Casllemaine Ntreet </em><br>
+        <em> Milton QLD 4064 </em><br>
     
-        <strong>phone number</strong> <br>
+        <strong>Phone Number :</strong> <br>
         (079)0009 9995<br>
     </article>
         <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26371661.85956456!2d-113.72360706725829!3d36.21040627051876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited%20States!5e0!3m2!1sen!2sjo!4v1583012449418!5m2!1sen!2sjo" width="300" height="300" frameborder="0" style="border:10px solid white;border-radius: 0 0 20px 0; margin-top: 65px;margin-left: -10px;" allowfullscreen=""></iframe>
@@ -56,6 +56,49 @@
 </div>
 
 </div>
+<h1 class="neon" data-text="[Neon-Light]">
+<div id="MyClockDisplay"></div></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
+<script>
+function showTime(){
+    var date =new Date();
+    var h=date.getHours();
+    var m=date.getMinutes();
+    var s=date.getSeconds();
+    var session="AM";
+if (h == 0){
+    h=12;
+}
+if (h>12){
+    h =h-12;
+    session="BM";
+}
+h =(h<10) ? "0" +h:h ;
+m =(m<10) ? "0" +m:m ;
+s =(s<10) ? "0" +s:s ;
+
+
+
+    var time = h + ":" +m +":"+s+" "+session;
+    document.getElementById("MyClockDisplay").innerText=time;
+    document.getElementById("MyClockDisplay").textContent=time;
+    setTimeout(showTime ,1000);
+}
+
+showTime();
+</script>
 </html>
