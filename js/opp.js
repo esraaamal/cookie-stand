@@ -224,10 +224,14 @@ myForm.addEventListener('submit' , function(event){
   var min= event.target.min.value;
   var max= event.target.max.value;
   var avg=event.target.avg.value;
+  if(min <max){
    var endfor =new Store(storeName, min, max, avg);
    tableEl.deleteRow(tableEl.rows.length-1);
    endfor.render();
    renderfooter();
-
+  }else{
+    
+      alert('min is small than max');
+  }
   });
 

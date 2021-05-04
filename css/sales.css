@@ -118,7 +118,7 @@ th {
    position: absolute;
    
     display: inline;
-    float: left;
+    /* float: left; */
     padding: 10px;
     margin: 10px;
     width: 200px;
@@ -129,7 +129,7 @@ th {
     position: relative;
     box-shadow: 0 0 10px #00000070;
     overflow: hidden;
-    margin-bottom: 200px;
+    /* margin-bottom: 200px; */
     
 }
 #demo ul li{
@@ -208,3 +208,13 @@ th {
     color: #aaa;
 }
 */
+
+
+.fish6{
+    font-size: 900px;
+}
+#fishpic{
+    width: 500px;
+    height: 500px;
+    background-color: khaki;
+margin-top: 1000px;}
