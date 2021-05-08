@@ -10,16 +10,56 @@ height: 100vh;
 overflow: hidden;
 
 }
-.mainppg{
-    /* position: relative; */
+
+
+#wood-back{
+  
+    position: absolute;
+    z-index: 1;
+    left: 27%;
+    top: 39%;
+    border: 5px dotted #d9bc7e;
+    border-radius: 25%;
+    overflow: hidden;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+
+}
+#wood-back img{
+    width: 258px;
+    height: 87px;
+    opacity: 0.7;
+
+}
+#wood-back p{
+    position: absolute;
+    z-index: 2;
+    font-size:40px;
+    top: -31%;
+    left: 22%;
+    color: whitesmoke;
+    font-family: 'Reggae One', cursive;
+    font-weight: bold;
+    opacity: .6;
+}
+#wood-back p:hover{
+    font-size:44px;
+    opacity: .9;
+    top: -40%;
+
 }
 
-.fish-pop{
-    position: absolute;
+#fish-pop{
+    position:absolute;
     top: 18%;
+    overflow: hidden;
 }
 .mouth{
     position: relative;
+    /* visibility: hidden; */
 }
 .mouth:hover,.mouth:focus{
     animation-name: animate;
@@ -27,7 +67,7 @@ overflow: hidden;
     transform-origin: 50% 50%;
 animation-iteration-count: initial;
 animation-timing-function: linear;  
-cursor: pointer;  
+/* cursor: pointer;   */
 }
 @keyframes animate
 {
@@ -45,66 +85,226 @@ cursor: pointer;
 
     
 }
-.mouth img:nth-child(2){
-    position: relative;
-    margin: -40px -69px;
-    
 
+
+
+.bubble{
+    width: 5%;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 41%;
+    top: 21%;
+    
+    
+    
 }
-.fishFade{
+
+
+#bubble1,#bubble2 {
+    animation: bubble 2s linear infinite;
+    width: 30px;
+    margin: 124px;
+   visibility: hidden;
+}
+
+@keyframes bubble{
+    0%{transform:translateX(50);
+         opacity: 0;left:-30%;width: 30px;margin-bottom: 100px;}
+    10%{transform:translateX(100px);
+        opacity: 1;left:-20%;width: 50px;margin-bottom: 90px;}
+    20%{transform:translateX(200px);
+        opacity: 1;left:-10%;width: 70px;margin-bottom: 80px;}
+    30%{transform:translateX(250px);
+        opacity: 1;left:20%;width: 90px;margin-bottom: 70px;}
+    40%{transform:translateX(300px);
+        opacity: 1;left:20%;width:90px;margin: 70px;}
+    50%{transform:translateX(350px);
+        opacity: 1;left:20%;width: 90px;margin: 70px;}
+    60%{transform:translateX(400px);
+        opacity: 1;left:20%;width: 90px;margin: 70px;}
+    70%{transform:translateX(450px);
+        opacity: 1;left:20%;width: 90px;margin: 70px;}
+    80%{transform:translateX(500px);
+        opacity: 1;left:20%;width: 90px;margin: 70px;}
+    90%{transform:translateX(550px);
+        opacity: 1;left:20%;width: 90px;margin: 70px;}
+    100%{transform:translateX(600px);
+        opacity: 0;left:20%;width: 90px;margin: 70px;}
+    
 
 }
 .side-bar{
     width: 50px;
     height: 100vh;
-    background: linear-gradient(#00545d,#000729);
+    background: linear-gradient(#00545d,#000729,#00545d);
     right: 0%;
-    top: 2%;
+    top: 0%;
     position: absolute;
+    opacity: 0.5;
 
 }
 
 .content1 {
-    visibility: hidden;
+    position: absolute;
+    top: 10%;
+    right: 5%;
     width: 300px;
     height: 600px;
-    box-shadow: 0 0 3px 0 rgb(0, 0, 0, 3);
-    padding:20px;
-    line-height: 30px;
+    box-shadow: 0 0 30px 0 rgb(0, 0, 0, 3);
+    padding:5px;
     text-align: center;
     border-radius: 20px;
-    margin-right: 500px;
-   position: sticky;
-   top: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
    
 
 }
 .paragraph{
-    margin-left: -20px;
-    width: 340px;
+    /* position: relative; */
+    line-height: 30px;
+    box-shadow: 0 0 6px 0 rgb(0, 0, 0, 3);
+    border-radius: 5%;
     background-color: black;
     opacity: 0.5;
     color: white;
     font-weight: 900;
+    margin-bottom: -50px;
+    padding: 0px 4px;
    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-
-.sign-in {
+#signIn{
     visibility: hidden;
+position: fixed;
+top: 0%;
+left: 0%;
+height: 100vh;
+width: 100%;
+background-color: rgb(0,0,0,0.4);
+z-index: 2;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+
+.sign-in form{
+    color: whitesmoke;
+}
+
+
+
+
+
+
+
+.sign-in span{
+    transition: 0.5;
+}
+.sign-in span:nth-child(1){
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right,transparent,chocolate);
+    animation: animate1 2s linear infinite;
+}
+
+@keyframes animate1{
+    0%{transform:translateX(-100%) ;}
+    100%{
+        transform:translateX(100%)
+    }
+}
+.sign-in span:nth-child(2){
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom,transparent,chocolate);
+    animation: animate2 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes animate2{
+    0%{transform:translatey(-100%) ;}
+    100%{
+        transform:translateX(100%)
+    }
+}
+.sign-in span:nth-child(3){
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to left,transparent,chocolate);
+    animation: animate3 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes animate3{
+    0%{transform:translateX(100%) ;}
+    100%{
+        transform:translatex(-100%)
+    }
+}
+
+.sign-in span:nth-child(4){
+    position: absolute;
+   top: 0%;
+   left: 0%;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to top,transparent,chocolate);
+    animation: animate4 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes animate4{
+    0%{transform:translatey(100%) ;}
+    100%{
+        transform:translatey(-100%)
+    }
+}
+.sign-in {
+    position: relative;
     width: 300px;
     box-shadow: 0 0 3px 0 rgb(0, 0, 0, 3);
-    background: #fff;
+    background:url(../img/cover-wood.jpeg);
     padding:20px;
-    margin: 9% auto 0;
+    margin: 5% auto 0;
     text-align: center;
-    border-radius: 20px;
-    margin-top: -550px;
-    
+    color: whitesmoke;
+    overflow: hidden;
+
 }
 .sign-in h2{
 
 color: #1c8adb;
+
+}
+#close{
+    position: absolute;
+    top: 21%;
+    left: 59%;
+background: none;
+color: whitesmoke;
+font-size:30px ;
+border: none;
+}
+#close:hover{
+font-size: 35px;
+top: 20%;
+
 
 }
 .input-box{
@@ -116,7 +316,7 @@ color: #1c8adb;
     border: 1px snow #999;
 
 }
-button{
+.sign-in button{
     color: #fff;
 border-radius: 20px;
 padding: 10px;
@@ -159,23 +359,10 @@ font-size: 15px;
 }
 .sign-in p a{
     text-decoration: underline;
-}
+    font: outline;
+    font-style: bold;
+    color: rgb(9, 125, 202);
 
-/*unviseted-link*/
-.sign-in p a:link{
-color: rgb(58, 9, 41);
-}
-/*viseted-link*/
-.sign-in p a:visited{
-    color: rgb(54, 9, 54);
-}
-/*mouse over link*/
-.sign-in p a:hover{
-    color: rgb(204, 9, 9);
-}
-/*click the link*/
-.sign-in p a:active{
-    color: rgb(11, 116, 28);
 }
 hr{
 margin-top: 20px;
@@ -185,11 +372,15 @@ width: 80%;
 .or{
     margin: -19px auto 10px;
     width: 30px;
-    background-color: #fff;
+    background-color:#ffffff;
+    color: black;
 }
-.sign-in img{
+#signIn img{
+    position: absolute;
     width: 80px;
-    margin-top: -50px;
+    z-index: 1;
+    top: 13%;
+    
 }
 #MyClockDisplay
 {

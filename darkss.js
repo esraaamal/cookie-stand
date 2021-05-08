@@ -1,11 +1,14 @@
 `use strict`;
 
-document.getElementById('hi').addEventListener("change", () => {
+document.getElementById('hi').addEventListener("change", function(){
     document.querySelector('.center1').style.background = "white";
 });
 document.getElementById('hi').addEventListener("click", function() {
     document.querySelector('.center1').style.background = "rgba(0,0,0,.3)";
+    body.style.background='red'
 });
+
+
 var content =document.getElementById("content");
 var button =document.getElementById("show");
 

@@ -3,34 +3,20 @@ body{
 font-family: 'Rubik' ;
 }
 
-/*
-h1 ,h2{
-    font-family: 'Rubik', ;
-
-    color: rgb(221, 49, 49);
-    font-size: larger;
-    font-family: Arial, Helvetica, sans-serif;
-}*/
 *{
     margin: 0;
-    padding: 0;
-    
+    padding: 0; 
 }
 
 .main{
-    height: auto;
-    width: 100%;
-    margin: 0 auto;
-    min-height: 500px;
+    height: 100vh;
    background-image: url("https://thumbs.gfycat.com/BewitchedYearlyAlbatross-size_restricted.gif");
-
-
 }
 
 
 .nav-bar{
-    width: 100%;
-    height: 4px;
+   margin: 0;
+    height: 10px;
     background-color:rgb(219, 172, 41);
 
 
@@ -38,60 +24,25 @@ h1 ,h2{
 }
 
 .nav-social{
-    width: 100%;
-    height: 33px;
+    
+    height: 50px;
     background-color: black;
 }
 
 
-.contain{
-    width: 1000px;
-    height: auto;
-    margin: 0 auto;
-    min-height: 500px;
-}
-
 .icon img{
-    display: inline-block;
-    width:150px;
-    height: 27px;
-    padding-top: 3px;
-    padding-left: 5px;
-   
-   
-    
+    width:35px;
 }
 .icon{
-    margin-left: 200px;
-   float: left;
-}
-.facebook img{
-width:28px;
-
-}
-.insta img{
-    width: 27px;
-    
-}
-.twitter img{
-    width: 28px;
+    position:absolute;
+    top: 2%;
+    width: 15%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
 }
 
-.snapchat img{
-    width: 30px;
-    height: 29px;
-}
-.facebook:hover{
-    box-shadow: 0px 0px 18px  #a9e932  ;
-}
-.snapchat:hover{
-    box-shadow: 0px 0px 18px  #a9e932  ;
-}
-
-.twitter:hover{
-    box-shadow: 0px 0px 18px  #a9e932  ;
-}
-.insta:hover{
+.icon img:hover{
     box-shadow: 0px 0px 18px  #a9e932  ;
 }
 
@@ -126,20 +77,23 @@ color: black;
 .header-bar{
     width: 100%;
     height: 100px;
-    float: left;
+    overflow: hidden;
 
 }
 .home-pg{
-    width: 800px;
-    float: left;
-    text-align: right;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-left: 210px
+   position: relative;
+    display: flex;
+    float: right;
+    align-items:flex-end;
+    top: 20%;
+    right: 10%;
+
+    
 
     
 }
 .home-pg a{
+    
     display: inline-block;
     text-decoration: none;
     color: black;
@@ -147,16 +101,9 @@ color: black;
     font-family: cursive;
     font-size:larger;
     font-weight: bold;
+    padding: 4%;
     
 }
-
-
-
- 
-/* #theImage{
-    height: 100px;
-} */
-
 
 .fish6{
     position: absolute;
@@ -167,7 +114,6 @@ color: black;
     width: 500px;
     height: 300px;
     background-color: lawngreen;
-    /* background-color: khaki; */
 position: absolute;
 top: 200%;
 left: 10%;
