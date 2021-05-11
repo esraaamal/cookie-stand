@@ -25,9 +25,9 @@ overflow: hidden;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-
-
 }
+
+
 #wood-back img{
     width: 258px;
     height: 87px;
@@ -37,20 +37,78 @@ overflow: hidden;
 #wood-back p{
     position: absolute;
     z-index: 2;
-    font-size:40px;
-    top: -31%;
+    font-size: 35px;
+    top: -21%;
     left: 22%;
     color: whitesmoke;
     font-family: 'Reggae One', cursive;
     font-weight: bold;
-    opacity: .6;
+    opacity: .5;
 }
 #wood-back p:hover{
-    font-size:44px;
+    font-size:35px;
     opacity: .9;
-    top: -40%;
+    top: -19%;
 
 }
+/* /////////////////////////////////////// */
+#wood-back1{
+  
+    position: absolute;
+    z-index: 1;
+    left: 27%;
+    top: 39%;
+    border: 5px dotted #d9bc7e;
+    border-radius: 25%;
+    overflow: hidden;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+#wood-back1 img{
+    width: 258px;
+    height: 87px;
+    opacity: 0.7;
+
+}
+#wood-back1 p{
+    position: absolute;
+    z-index: 2;
+    font-size: 36px;
+    top: -18%;
+    left: 19%;
+    color: whitesmoke;
+    font-family: 'Reggae One', cursive;
+    font-weight: bold;
+    opacity: .5;
+}
+#wood-back1 p:hover{
+    font-size:36px;
+    opacity: .9;
+    top: -16%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #fish-pop{
     position:absolute;

@@ -1,33 +1,85 @@
 `use strict`;
 
-document.getElementById('hi').addEventListener("change", function(){
-    document.querySelector('.center1').style.background = "white";
-});
+// document.getElementById('hi').addEventListener("change", function(){
+//     document.getElementById('note').style.visibility = "visible"
+// });
 document.getElementById('hi').addEventListener("click", function() {
-    document.querySelector('.center1').style.background = "rgba(0,0,0,.3)";
-    body.style.background='red'
+    document.getElementById('note').style.visibility = "visible";
+   
 });
 
 
-var content =document.getElementById("content");
-var button =document.getElementById("show");
 
-button.onclick=function(){
+// var content =document.getElementById("content");
+// var button =document.getElementById("show");
 
-if(content.className== "open"){
-    //shrink the box
-    content.className="";
-    button.innerHTML="Show More";
+// button.onclick=function(){
 
-}else{
+// if(content.className== "open"){
+//     //shrink the box
+//     content.className="";
+//     button.innerHTML="Show More";
 
-    //expand the box
-    content.className= "open";
-    button.innerHTML="Show Less"
+// }else{
+
+//     //expand the box
+//     content.className= "open";
+//     button.innerHTML="Show Less"
+// }
+
+
+// }
+
+
+function removeTransition(e){
+    if (e.propertyName !== 'transform') return;
+    e.target.classList.remove('playing')
 }
 
-
+function playSound(e){
+    const key=document.querySelector(`div[data-key="${e.keyCode}"]`);
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    if(!audio)return ;//stop the function running;
+    audio.currentTime=0;//rewind the sound from start
+    key.classList.add('playing');
+    audio.play()
+   console.log(e)
 }
+const keys=document.querySelectorAll('.key')
+keys.forEach(key=>key.addEventListener('transitionend',removeTransition))
+
+window.addEventListener('keydown',playSound)
+
+function writeNote(e){
+    // console.log(e.keyCode)
+    const note1=document.getElementById('note');
+    if(e.keyCode===8){
+     note1.textContent=note1.textContent.substring(1,note1.textContent.length-1)
+    }
+    else{
+    note1.textContent= note1.textContent+e.key}
+}
+window.addEventListener('keyup',writeNote)
+
+// var timeout = setTimeout("location.reload(true);",5000);
+// function resetTimeout() {
+//   clearTimeout(timeout);
+//   timeout = setTimeout("location.reload(true);",5000);
+//   console.log(timeout)
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // var ssImageArray =[

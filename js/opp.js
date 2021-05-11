@@ -21,14 +21,15 @@ function Store(name, min, max, avg) {
 
 
 Store.prototype.cookiesNum = function () {
-    for (var j = 0; j <= hours.length; j++) {
+    for (var j = 0; j <hours.length; j++) {
         var randomcook = getRandomcookies(this.min, this.max);
         var nubmcookies = Math.floor(randomcook * this.avg);
         this.resultArray.push(nubmcookies);
         this.total += this.resultArray[j];
+        console.log(`${hours[j]}:${nubmcookies}cookies`)
     }
 
-    //console.log(this.resultArray);
+    console.log(locations);
 
 };
 //the random function ----
@@ -167,7 +168,7 @@ Store.prototype.render = function () {
 
 
 for (var i = 0; i < locations.length; i++) {
-    locations[i].render();
+    // locations[i].render();
     locations[i].render1();
    
     
