@@ -432,6 +432,9 @@ width: 80%;
     width: 30px;
     background-color:#ffffff;
     color: black;
+    background: url(/img/cover-wood.jpeg);
+    color: whitesmoke;
+    padding: 0 10px;
 }
 #signIn img{
     position: absolute;

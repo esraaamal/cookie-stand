@@ -11,7 +11,7 @@ function Store(name, min, max, avg) {
     this.avg = avg;
     this.resultArray = [];
     this.total = 0;
-    console.log(this);
+    // console.log(this);
     this.cookiesNum();//return the array of random number ;
     locations.push(this);
 
@@ -26,10 +26,10 @@ Store.prototype.cookiesNum = function () {
         var nubmcookies = Math.floor(randomcook * this.avg);
         this.resultArray.push(nubmcookies);
         this.total += this.resultArray[j];
-        console.log(`${hours[j]}:${nubmcookies}cookies`)
+        // console.log(`${hours[j]}:${nubmcookies}cookies`)
     }
 
-    console.log(locations);
+    // console.log(locations);
 
 };
 //the random function ----
@@ -107,15 +107,17 @@ Store.prototype.render1 = function () {
 
 //here we create a table
 var tableContainer = document.getElementById('demoTable');
-var tableEl = document.createElement('table');
+var index, tableEl = document.createElement('table');
+tableEl.setAttribute('id','tableEl')
+var tableId=document.getElementById('tableEl')
 tableContainer.appendChild(tableEl);
-
-
 
 
 
 ///---Funxtion for table header-------------
 function renderHeader() {
+    let headTable=document.createElement('thead');
+    tableEl.appendChild(headTable)
     var trEl = document.createElement('tr');
     tableEl.appendChild(trEl);
     //first col
@@ -125,15 +127,16 @@ function renderHeader() {
     //show all the col on hours with for loop---------------------
     for (var i = 0; i < hours.length; i++) {
         var th2El = document.createElement('th');
-        th2El.textContent = `${hours[i]}  `;
+        th2El.textContent = `${hours[i]}`;
         trEl.appendChild(th2El);
     }
     var th3El = document.createElement('th');
-    th3El.textContent = ' Total';
     trEl.appendChild(th3El);
-    /*var th4El=document.createElement('th');
-    th4El.textContent = ' Add/delete';
-    trEl.appendChild(th4El);*/
+    th3El.textContent = ' Total';
+    var tdel4=document.createElement('th');
+    trEl.appendChild(tdel4)
+    tdel4.textContent="Delete"
+    
 }
 
 renderHeader();
@@ -152,6 +155,7 @@ Store.prototype.render = function () {
     tableEl.appendChild(trEl);
     //first row
     var tdEl = document.createElement('td');
+    // tdEl.setAttribute("rowspan",2)
     tdEl.textContent = this.name;
     trEl.appendChild(tdEl);
     for (var i = 0; i < hours.length; i++) {
@@ -162,13 +166,26 @@ Store.prototype.render = function () {
     var tdTotalEl = document.createElement('td');
     tdTotalEl.textContent = this.total;
     trEl.appendChild(tdTotalEl);
+
+    var tdDelete = document.createElement('td');
+    trEl.appendChild(tdDelete);
+    var buttonEl=document.createElement('button');
+    buttonEl.setAttribute('class','btn')
+    tdDelete.appendChild(buttonEl);
+    buttonEl.setAttribute('type','button')
+    var iElem = document.createElement('i');
+  buttonEl.appendChild(iElem);
+    iElem.setAttribute('class','fas fa-trash-alt')
+
+    
+
     
 }
 
 
 
 for (var i = 0; i < locations.length; i++) {
-    // locations[i].render();
+    locations[i].render();
     locations[i].render1();
    
     
@@ -185,6 +202,7 @@ for (var i = 0; i < locations.length; i++) {
     function renderfooter(){
     var trEl = document.createElement('tr');
     tableEl.appendChild(trEl);
+    trEl.setAttribute('class','total1')
     
     var tdEl = document.createElement('td');
     tdEl.textContent = 'Total';
@@ -205,16 +223,38 @@ for (var i = 0; i < locations.length; i++) {
     
     tdTotal6El.textContent = metaTotal ;
     trEl.appendChild(tdTotal6El);
+
+    var tdDelete = document.createElement('td');
+    // tdDelete.setAttribute('id','deleteRow')
+    trEl.appendChild(tdDelete);
+    var buttonEl=document.createElement('button');
+    tdDelete.appendChild(buttonEl);
+    buttonEl.setAttribute('type','button')
+    var iElem = document.createElement('i');
+  buttonEl.appendChild(iElem);
+    iElem.setAttribute('class','fas fa-trash-alt')
+    buttonEl.setAttribute('onclick','myFunction()')
+
+
 }
 
 renderfooter();
 ///////////////////////////////delete row function
-
-
 function myFunction() {
-    document.getElementById("myTable").deleteRow(0);
-  }
-    /////////////////////////
+    alert('you can\'t delete this Row')
+   }
+
+
+
+//////to delete specific rows///////
+$('#tableEl').on('click','.btn',function(){
+    $(this).closest('tr').remove();
+    locations.splice(0,1)
+    tableEl.deleteRow(tableEl.rows.length-1);
+    renderfooter()
+})
+
+
 
 var myForm = document.getElementById('myForm');
 
@@ -222,8 +262,8 @@ myForm.addEventListener('submit' , function(event){
   event.preventDefault();
   console.log(event.target);
   var storeName = event.target.name.value;
-  var min= event.target.min.value;
-  var max= event.target.max.value;
+  var min= Number(event.target.min.value);
+  var max= Number(event.target.max.value);
   var avg=event.target.avg.value;
   if(min <max){
    var endfor =new Store(storeName, min, max, avg);
@@ -235,4 +275,529 @@ myForm.addEventListener('submit' , function(event){
       alert('min is small than max');
   }
   });
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
